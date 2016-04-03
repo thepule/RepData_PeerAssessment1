@@ -24,9 +24,9 @@ all the steps within a day. In order to do this I used the *group_by* function
 from the package *dplyr*. After the plot of total number of steps per day in function
 of the date is produced using *ggplot*.
 
-```{r}
+```{r, message=FALSE}
 g1 <- activity %>% group_by(date) %>% summarise(Tot_steps = sum(steps, na.rm = T))
-ggplot(data = g1, aes(date, Tot_steps)) + geom_bar(stat="identity")
+ggplot(data = g1, aes(Tot_steps)) + geom_histogram()
 ```
 
 Calculate mean and median total number of steps per day:
@@ -78,10 +78,9 @@ head(activity_nafill)
 
 Plot a histogram of the total number of steps taken each day.
 
-```{r}
+```{r, message=F}
 g <- activity_nafill %>% group_by(date) %>% summarise(Tot_steps = sum(steps, na.rm = T))
-ggplot(data = g, aes(date, Tot_steps)) + geom_bar(stat="identity") + 
-        ylab("Total number of steps")
+ggplot(data = g, aes(Tot_steps)) + geom_histogram()
 ```
 
 Calculate new mean and median total daily steps are:

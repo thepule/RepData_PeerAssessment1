@@ -23,7 +23,7 @@ of the date is produced using *ggplot*.
 
 ```r
 g1 <- activity %>% group_by(date) %>% summarise(Tot_steps = sum(steps, na.rm = T))
-ggplot(data = g1, aes(date, Tot_steps)) + geom_bar(stat="identity")
+ggplot(data = g1, aes(Tot_steps)) + geom_histogram()
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-1-1.png)
@@ -105,8 +105,7 @@ Plot a histogram of the total number of steps taken each day.
 
 ```r
 g <- activity_nafill %>% group_by(date) %>% summarise(Tot_steps = sum(steps, na.rm = T))
-ggplot(data = g, aes(date, Tot_steps)) + geom_bar(stat="identity") + 
-        ylab("Total number of steps")
+ggplot(data = g, aes(Tot_steps)) + geom_histogram()
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-7-1.png)
