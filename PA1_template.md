@@ -116,11 +116,6 @@ Calculate new mean and median total daily steps are:
 ```r
 mean_withoutna <- round(mean(g$Tot_steps),0)
 median_withoutna <- round(median(g$Tot_steps),0)
-round(mean(g$Tot_steps),0)
-```
-
-```
-## [1] 10766
 ```
 The new mean and median are respectively 10766 and 10762. Comparing
 them with the original ones 9354 and 10395, the impact of filling *NA* can be clearly seen.
