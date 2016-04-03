@@ -7,7 +7,7 @@ After loading the data the **date** variable is converted to date-type.
 
 
 ```r
-options(scipen=999) # Removes scientific notation in printed variabls. Useful for later.
+options(scipen=999) # Removes scientific notation in printed variables. Useful for later.
 library(dplyr)
 library(ggplot2)
 activity <- read.csv(unz("activity.zip", "activity.csv"), stringsAsFactors = F)
@@ -144,7 +144,7 @@ g_mean_int_week <- activity %>%
               summarise(meanstep = mean(steps, na.rm = T))
 
 ggplot(g_mean_int_week, aes(x = interval, y = meanstep, colour = weekpart)) + geom_line() +
-        facet_grid(weekpart ~ .) 
+        facet_grid(weekpart ~ .) + ylab("Average number of steps")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-10-1.png)
